@@ -45,9 +45,8 @@ console.log(result);
 // Write two functions. The first, calculateTax, takes an amount and returns the tax (e.g., 8%).
 // The second function, calculateTotal, takes a subtotal, calls calculateTax inside it, adds the tax to the subtotal, and returns the final price.
 
-// function calculateTax (amount) {
-//     return amount * (8/100);
-// }
+// function calculateTax (amount) { return amount * (8/100) };
+
 // console.log(calculateTax(10000));
 
 // function calculateTotal (subtotal){
@@ -151,7 +150,7 @@ fetchMockData((message) => {
 // Task: Write a script that logs "1. Request Received", then calls setTimeout to log "2. Processing Data" after 1 second, and immediately logs "3. Sending Response" outside the timeout.
 // Logic: Run the code. Observe and document why "3" prints before "2". This is crucial for backend event loops.
 
-function logger(log1, log2, log3) {
+function logger() {
   console.log("1. Request Received");
   setTimeout(() => {
     console.log("2. Processing Data");
@@ -171,7 +170,7 @@ const databaseConfig = {
   dbName: "flame",
   password: 12345,
   getConnectionString: function () {
-    return `mongodb://${this.host}:${this.port}/${this.dbName}.`;
+    return `mongodb://${this.host}:${this.port}/${this.dbName}`;
   },
 };
 
@@ -241,7 +240,7 @@ console.log(sumAll(1, 2, 3, 4, 5));
 // Logic: Write a traditional for loop (using let i = 0) that iterates over the array. If a username is exactly 4 characters long, push it into a new array called shortNames.
 
 const usernames = [
-  "Ace",
+  "Acer",
   "Jay",
   "ShadowX",
   "CodeMaster",
@@ -253,7 +252,7 @@ const usernames = [
 const shortNames = [];
 
 for (let i = 0; i < usernames.length; i++) {
-  if (usernames[i].length <= 4) {
+  if (usernames[i].length === 4) {
     shortNames.push(usernames[i]);
   }
 }
@@ -287,9 +286,7 @@ const products = [
   },
 ];
 
-const prices = products.map((p) => {
-  return (p.price / 1500).toFixed(2);
-});
+const prices = products.map((p) =>  p.price / 1500)  ;
 
 console.log(prices);
 
